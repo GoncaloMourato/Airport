@@ -1,0 +1,194 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<head>
+    <meta charset="URF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet" />
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.css" />
+    <link rel="stylesheet" href="~/css/Index.css" />
+
+    <title>Mourato Airport</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div>
+                    <a asp-action="Index" asp-controller="Home">
+                        <img src="~/images/logo2-min.png" alt="Logo" class="logo" />
+                    </a>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a asp-action="Index" asp-controller="Home">Home</a>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Tickets">Buy Ticket</a>
+                            </li>
+                            <li>
+                                <a asp-action="Schedules" asp-controller="Home">Schedules</a>
+                            </li>
+                            <li>
+                                <a asp-action="History" asp-controller="Home">See History</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <div>
+                <h1>
+                    Are you <br />
+                    Ready for <br />
+                    <span>Take-off?</span>
+                </h1>
+                <p>
+                    Buy now tickets with the <br />
+                    best price of the market.
+                    Let's go travel !!
+                </p>
+                <a class="btn btn-primary" href="#">
+                    Buy Ticket
+                </a>
+                <a class="btn btn-secondary" asp-action="Register" asp-controller="Account">
+                    Registration
+                </a>
+            </div>
+        </div>
+        <img class="plane wow animate_animated animate_fadeIn"
+             src="~/images/airplanebg.png" alt="" />
+    </header>
+    <section class="about">
+        <div class="swiper aboutSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/images/about1-min.jpg" alt="" />
+                        <div class="card-text">
+                            <h1>About us</h1>
+                            <p>
+                                Mourato Airport is one of the national airline of Portugal.
+                                With it's hub in Lisbon, Mourato Airport serves dozens of countries
+                                throughout Africa, Europe, North America and South America.
+                            </p>
+                            <a href="contact.html" class="btn btn-secundary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/images/about2-min.jpg" alt="" />
+                        <div class="card-text">
+                            <h1>Buy Ticket</h1>
+                            <p>
+                                In the end, this is why people fly Mourato Airport: Low prices.
+                                Mourato Airport has built its business by attracting travelers with
+                                the lowest fares possible.
+                            </p>
+                            <a href="tickets.html" class="btn btn-secundary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/images/schedule.jpg" alt="" />
+                        <div class="card-text">
+                            <h1>Schedules</h1>
+                            <p>
+                                Mourato Airport has an average delay of 30 minutes.
+                                Statistically, when taking into consideration sample size this airport
+                                has delay performance characteristics better than 66% of other airports.
+                            </p>
+                            <a href="schedule.html" class="btn btn-secundary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="service">
+                <i class="fa-solid fa-plane"></i>
+                <p>Airport making Flights</p>
+                <h3>Since 2002</h3>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-user-graduate"></i>
+                <p>Pilots with 20 years of </p>
+                <h3>experience</h3>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-road"></i>
+                <p>Landing strip with</p>
+                <h3>13.000m²</h3>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-plane-arrival"></i>
+                <p>More than</p>
+                <h3>100+ flights made</h3>
+            </div>
+        </div>
+    </section>
+
+    <div class="heading">
+        <h1 class="wow animate__animated animate__fadeInUp">
+            Some of ours
+            <span>Airplanes</span>
+        </h1>
+    </div>
+    <section class="planes">
+        <div class="swiper planeSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div>
+                        <h1 class="slide-num">01</h1>
+                        <img src="~/images/plane1-min.png" alt="plane" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <h1 class="slide-num">02</h1>
+                        <img src="~/images/plane2-min.png" alt="plane" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <h1 class="slide-num">03</h1>
+                        <img src="~/images/plane3-min.png" alt="plane" />
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="~/js/Main.js"></script>
+</body>

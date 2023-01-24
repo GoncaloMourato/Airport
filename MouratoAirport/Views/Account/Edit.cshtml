@@ -1,0 +1,96 @@
+﻿@model MouratoAirport.Models.AddEmployeeViewModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = null;
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Admin</title>
+    <link rel="stylesheet" href="~/css/Adminadd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <section id="menu">
+        <div class="logo">
+            <img src="~/images/logo2-min.png" alt="">
+            <h2>Airport Mourato</h2>
+        </div>
+
+        <div class="items">
+            <li><i class="fa-solid fa-chart-pie"></i><a asp-action="Admin" asp-controller="Account">Dashboard</a></li>
+            <li><i class="fa-solid fa-plane"></i><a asp-action="Index" asp-controller="Airplanes">Airplanes</a></li>
+            <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="#">Logout</a></li>
+        </div>
+    </section>
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="fa-solid fa-bell"></i>
+                <img src="~/images/logo2-min.png" alt="">
+            </div>
+        </div>
+
+        <h3 class="i-name">Add Employee</h3>
+
+        <form method="post">
+
+            <div class="containeremployee">
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <div class="inputBox">
+                            <span>First Name :</span>
+                            <input asp-for="FirstName" type="text" placeholder="First name of the staff" required>
+                            <span asp-validation-for="FirstName"></span>
+                        </div>
+
+                        <div class="inputBox">
+                            <span>Last Name :</span>
+                            <input asp-for="LastName" type="text" placeholder="Last name of the staff" required>
+                            <span asp-validation-for="LastName"></span>
+                        </div>
+
+                        <div class="inputBox">
+                            <span>UserName :</span>
+                            <input asp-for="Email" type="email" placeholder="example@gmail.com" required>
+                            <span asp-validation-for="Email"></span>
+                        </div>
+
+                        <div class="inputBox">
+                            <span>Password :</span>
+                            <input asp-for="Password" type="password" placeholder="Password" required>
+                            <span asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="inputBox">
+                            <span>Confirm Password :</span>
+                            <input asp-for="ConfirmPassword" type="password" placeholder="Confirm Password" required>
+                            <span asp-validation-for="ConfirmPassword"></span>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Employee" class="submit-btn">
+
+            </div>
+
+        </form>
+    </section>
+
+</body>

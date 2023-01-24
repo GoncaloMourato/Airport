@@ -1,0 +1,98 @@
+﻿@model MouratoAirport.Data.Entities.Ticket
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="~/css/Tickets.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body style="background: #081a29;">
+
+    <nav>
+        <div class="container">
+            <div>
+                <a asp-action="Index" asp-controller="Tickets">
+                    <img src="~/images/logo2-min.png" alt="Logo" class="logo" />
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a asp-action="Index" asp-controller="Home">Home</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Tickets">Buy Ticket</a>
+                        </li>
+                        <li>
+                            <a asp-action="Schedules" asp-controller="Home">Schedules</a>
+                        </li>
+                        <li>
+                            <a asp-action="History" asp-controller="Home">See History</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <h1 style="font-size: 60px;margin-left: 850px;margin-top: 40px;">Tickets:</h1>
+
+    <section id="tables">
+
+        <dir class="board">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>From</td>
+                        <td>To</td>
+                        <td>Date</td>
+                        <td>Price</td>
+                        <td></td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="ticket">
+                            <img src="~/images/imagem-removebg-preview.png" alt="">
+                            <div class="ticket-de">
+                                <h5>Portugal</h5>
+                                <p>Lisbon</p>
+                            </div>
+                        </td>
+
+                        <td class="ticket-des">
+                            <h5>Ukraine</h5>
+                            <p>Kyev</p>
+                        </td>
+
+                        <td class="date"><p>10/02/2023</p></td>
+
+                        <td class="price">
+                            <p>130€</p>
+                        </td>
+
+                        <td class="Buy"><a asp-action="Seats" asp-controller="Tickets">Buy</a></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </dir>
+
+    </section>
+
+</body>
+

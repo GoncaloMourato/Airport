@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "History";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="~/css/History.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <div>
+                <a href="index.html">
+                    <img src="~/images/logo2-min.png" alt="Logo" class="logo" />
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a asp-action="Index" asp-controller="Home">Home</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Tickets">Buy Ticket</a>
+                        </li>
+                        <li>
+                            <a asp-action="Schedules" asp-controller="Home">Schedules</a>
+                        </li>
+                        <li>
+                            <a asp-action="History" asp-controller="Home">See History</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <h1 style="font-size: 60px;margin-left: 680px;margin-top: 40px;">On going Flights:</h1>
+
+    <section id="tables">
+
+        <dir class="boardSee">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>From</td>
+                        <td>To</td>
+                        <td>Date</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="schedule">
+                            <div class="schedule-de">
+                                <h5>Portugal</h5>
+                                <p>Lisbon</p>
+                            </div>
+                        </td>
+
+                        <td class="schedule-des">
+                            <h5>Ukraine</h5>
+                            <p>Kyev</p>
+                        </td>
+
+                        <td class="date"><h5>10/02/2023</h5></td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </dir>
+
+        <h1 style="font-size: 60px;margin-left: 720px;margin-top: 40px;">Past Flights:</h1>
+
+        <dir class="boardHistory">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>From</td>
+                        <td>To</td>
+                        <td>Date</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="schedule">
+                            <div class="schedule-de">
+                                <h5>Portugal</h5>
+                                <p>Lisbon</p>
+                            </div>
+                        </td>
+
+                        <td class="schedule-des">
+                            <h5>Ukraine</h5>
+                            <p>Kyev</p>
+                        </td>
+
+                        <td class="date"><h5>10/02/2023</h5></td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </dir>
+
+    </section>
+
+</body>

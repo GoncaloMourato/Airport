@@ -1,0 +1,116 @@
+﻿body {
+    background-color: #081a29;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.exit {
+    position: relative;
+    height: 15px;
+}
+
+    .exit:before {
+        left: 0;
+    }
+
+    .exit:after {
+        right: 0;
+    }
+
+    .exit:before {
+        content: "EXIT";
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0px 2px;
+        font-family: "Arial Narrow", Arial, sans-serif;
+        display: block;
+        position: absolute;
+        background: green;
+        color: white;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .exit:after {
+        content: "EXIT";
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0px 2px;
+        font-family: "Arial Narrow", Arial, sans-serif;
+        display: block;
+        position: absolute;
+        background: green;
+        color: white;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+/* seates */
+
+.seat {
+  margin: auto;
+  max-width: 260px;
+  width: 20%;
+  transform: rotate(-90deg);
+  position: absolute;
+  left: 45%;
+  top: -10%;
+}
+
+.main {
+    background: #fff;
+}
+
+.seat img {
+    width: 100%;
+}
+
+.alva label {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0rem;
+}
+
+.num span {
+    background: none !important;
+    color: #000 !important;
+    transform: rotate(90deg);
+}
+
+.alva label input[type="checkbox"] {
+    display: none;
+}
+
+.alva label span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    background: #c9baff;
+    user-select: none;
+    transition: 0.5s;
+    overflow: hidden;
+    min-width: 25px !important;
+    min-height: 25px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+    .alva label span::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.alva label input[type="checkbox"]:checked ~ span {
+    background: red;
+    /* You can add image in background for selected seat  */
+    width: 100%;
+    height: auto;
+    cursor: default;
+}

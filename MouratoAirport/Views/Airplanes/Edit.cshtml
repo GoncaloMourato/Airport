@@ -1,0 +1,205 @@
+﻿@*@model MouratoAirport.Data.Entities.Airplane
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Aviao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Seat" class="control-label"></label>
+                <input asp-for="Seat" class="form-control" />
+                <span asp-validation-for="Seat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+} *@
+
+
+
+
+@model MouratoAirport.Models.AirplaneViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Airplane</title>
+    <link rel="stylesheet" href="~/css/Airplaneadd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <section id="menu">
+        <div class="logo">
+            <img src="~/images/logo2-min.png" alt="">
+            <h2>Airport Mourato</h2>
+        </div>
+
+        <div class="items">
+            <li><i class="fa-solid fa-chart-pie"></i><a asp-action="Admin" asp-controller="Account">Dashboard</a></li>
+            <li><i class="fa-solid fa-plane"></i><a asp-action="Index" asp-controller="Airplanes">Airplanes</a></li>
+            <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="#">Logout</a></li>
+        </div>
+    </section>
+
+
+
+
+
+    @if (Model.TypeEdit == "airplane")
+    {
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="TypeEdit" />
+
+            <h2 style="position: absolute;padding-left: 800px;padding-top: 15px;">Edit Airplane</h2>
+        <div class="overlayProducts">
+            <div id="formProducts" style="height: 750px;margin-left:800px">
+
+                <div id="nameproducts">
+                    <label for="message">Name:</label>
+                    <input id="message" asp-for="Name" placeholder="" required>
+                </div>
+
+                <div id="nameproducts">
+                    <label for="message">Model:</label>
+                    <input id="message" asp-for="Model" placeholder="" required>
+                </div>
+
+                <div id="nameproducts">
+                    <label for="message">Seats:</label>
+                    <input id="message" asp-for="Seat" placeholder="" required>
+                </div>
+
+                <label for="image">Airplane image:</label>
+                <label class="picture" tabindex="0">
+                    <input asp-for="ImageFile" type="file" accept="image/*" id="photo" required class="picture__input">
+                    <span class="picture__image" style="width: 90%;"></span>
+                </label>
+
+                <div class="center">
+                    <input type="submit" value="Add Airplane">
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+    }
+
+    @if(Model.TypeEdit == "airport")
+    {
+        <h2 style="position: absolute;padding-left: 800px;padding-top: 15px;">Edit Airport</h2>
+    <form asp-action="EditAirport">
+        <input type="hidden" asp-for="IdAirport" />
+        <input type="hidden" asp-for="TypeEdit" />
+
+        <div class="overlayProducts">
+                <div id="formProducts" style="height: 750px;position: absolute;margin-left: 800px;">
+
+                <div id="nameproducts">
+                    <label for="message">Airport:</label>
+                    <input id="message" asp-for="NameAirport" placeholder="" required>
+                </div>
+
+                <div id="nameproducts">
+                    <label for="message">City:</label>
+                    <input id="message" asp-for="CityAirport" placeholder="" required>
+                </div>
+
+                <div id="nameproducts">
+                    <label for="message">Location:</label>
+                    <input id="message" asp-for="LocationAirport" placeholder="" required>
+                </div>
+
+
+                <div class="center">
+                    <input type="submit" value="Add Airport">
+                </div>
+
+            </div>
+        </div>
+    </form>
+            
+    }
+
+    <script>
+        const inputFile = document.querySelector('.picture__input');
+        const pictureImage = document.querySelector('.picture__image');
+        const pictureImageText = 'Choose Image';
+        pictureImage.innerHTML = pictureImageText;
+        inputFile.addEventListener('change', function (e) {
+            const inputTarget = e.target;
+            const file = inputTarget.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.addEventListener('load', function (e) {
+                    const readerTarget = e.target;
+                    const img = document.createElement('img');
+                    img.src = readerTarget.result;
+                    img.classList.add('picture__img');
+                    pictureImage.innerHTML = '';
+                    pictureImage.appendChild(img);
+                });
+                reader.readAsDataURL(file);
+            }
+            else {
+                pictureImage.innerHTML = pictureImageText;
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,128 @@
+﻿@model MouratoAirport.Data.Entities.Flights
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Airport Dashboard</title>
+    <link rel="stylesheet" href="~/css/Flights.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <section id="menu">
+        <div class="logo">
+            <img src="~/images/logo2-min.png" alt="">
+            <h2>Airport Mourato</h2>
+        </div>
+
+        <div class="items">
+            <li><i class="fa-solid fa-chart-pie"></i><a asp-action="Admin" asp-controller="Account">Dashboard</a></li>
+            <li><i class="fa-solid fa-plane"></i><a asp-action="Index" asp-controller="Airplanes">Airplanes</a></li>
+            <li><i class="fa-solid fa-ticket-simple"></i><a href="#">Ticket</a></li>
+            <li><i class="fa-solid fa-plane-departure"></i><a asp-action="Index" asp-controller="Flights">Flights</a></li>
+            <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="#">Logout</a></li>
+        </div>
+    </section>
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="fa-solid fa-bell"></i>
+                <img src="~/images/logo2-min.png" alt="">
+            </div>
+        </div>
+
+        <h3 class="i-name">Flights</h3>
+
+        <div class="values">
+            <div class="val-box">
+                <i class="fa-solid fa-plane-departure"></i>
+                <div>
+                    <h3><a asp-action="Create" asp-controller="Flights" style="text-decoration: none;outline: none;color: #081a29;">Add</a></h3>
+                    <span>New Flights</span>
+                </div>
+            </div>
+        </div>
+
+        <dir class="boardflight">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Flight Number</td>
+                        <td>Date/Time</td>
+                        <td>From</td>
+                        <td>To</td>
+                        <td>Airplane</td>
+                        <td>Price Eco</td>
+                        <td>Price Delx</td>
+                        <td>Price Emp</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="flight-de">
+                            <p>72345</p>
+                        </td>
+
+                        <td>
+                            <div class="flight-de">
+                                <h5>16/5/2023</h5>
+                                <p>14:30</p>
+                            </div>
+                        </td>
+
+                        <td class="flight-de">
+                            <p>Turkistan</p>
+                        </td>
+
+                        <td class="flight-de">
+                            <p>Ukraine</p>
+                        </td>
+
+                        <td>
+                            <div class="flight-de">
+                                <h5>AE</h5>
+                            </div>
+                        </td>
+
+                        <td class="flight-de">
+                            <h5>30€</h5>
+                        </td>
+
+                        <td class="flight-de">
+                            <h5>170€</h5>
+                        </td>
+
+
+                        <td class="flight-de">
+                            <h5>90€</h5>
+                        </td>
+
+                        <td class="edit"><a href="#">Edit</a></td>
+
+                        <td class="edit"><a href="#">Remove</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dir>
+
+    </section>
+
+</body>

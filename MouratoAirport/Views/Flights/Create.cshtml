@@ -1,0 +1,106 @@
+﻿@model MouratoAirport.Data.Entities.Flights
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Airplane</title>
+    <link rel="stylesheet" href="~/css/Flightsadd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <section id="menu">
+        <div class="logo">
+            <img src="~/images/logo2-min.png" alt="">
+            <h2>Airport Mourato</h2>
+        </div>
+
+        <div class="items">
+            <li><i class="fa-solid fa-chart-pie"></i><a asp-action="Admin" asp-controller="Account">Dashboard</a></li>
+            <li><i class="fa-solid fa-plane"></i><a asp-action="Index" asp-controller="Airplanes">Airplanes</a></li>
+            <li><i class="fa-solid fa-plane-departure"></i><a asp-action="Index" asp-controller="Flights">Flights</a></li>
+            <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="#">Logout</a></li>
+        </div>
+    </section>
+
+
+    <h2 style="position: absolute;padding-left: 400px;padding-top: 15px;">Add Flights</h2>
+    <h2 style="position: absolute;padding-left: 1250px;padding-top: 15px;">Add Prices</h2>
+
+
+    <div id="formFlights" style="height: 750px;">
+
+        <div id="nameflights">
+            <label for="message">Number Flight:</label>
+            <input id="message" placeholder="" readonly>
+        </div>
+
+        <div id="nameflights">
+            <label for="message">Date/Time:</label>
+            <input type="date" id="message" placeholder="" required>
+        </div>
+
+        <div class="select">
+            <label for="reason">From</label>
+            <select required id="format">
+                <option selected disabled>Choose Start</option>
+                <option value="start1">China</option>
+                <option value="start2">Portugal</option>
+            </select>
+        </div>
+
+        <div class="select">
+            <label for="reason">To</label>
+            <select required id="format">
+                <option selected disabled>Choose Destination</option>
+                <option value="to1">Japan</option>
+                <option value="to2">Ukraine</option>
+            </select>
+        </div>
+
+        <div class="select">
+            <label for="reason">Airplane</label>
+            <select required id="format">
+                <option selected disabled>Choose Airplane</option>
+                <option value="Air1">AE-89</option>
+                <option value="Air2">BV-C3-74</option>
+            </select>
+        </div>
+
+        <div class="center">
+            <input type="submit" value="Add Flights/Price">
+        </div>
+
+    </div>
+
+    <div id="formFlights" style="height: 350px;position: absolute;margin-left: 1250px;">
+
+        <div id="nameflights">
+            <label for="message">Price Deluxe:</label>
+            <input id="message" placeholder="" required>
+        </div>
+
+        <div id="nameflights">
+            <label for="message">Price Economy:</label>
+            <input id="message" placeholder="" required>
+        </div>
+
+        <div id="nameflights">
+            <label for="message">Price Business:</label>
+            <input id="message" placeholder="" required>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+</body>

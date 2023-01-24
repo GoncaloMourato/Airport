@@ -1,0 +1,63 @@
+﻿@model MouratoAirport.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+    <title>Mourato Airport | Login</title>
+
+</head>
+<body>
+
+    <form method="post">
+
+        <div class="box">
+            <div class="container">
+
+                <div class="top">
+                    <header>Login</header>
+                </div>
+
+                <div class="input-field">
+                    <input asp-for="Username" type="text" class="input" placeholder="Username" id="">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="input-field">
+                    <input asp-for="Password" type="Password" class="input" placeholder="Password" id="">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Login" id="">
+                </div>
+
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" name="" id="check" style="margin-top: -0.5px;">
+                        <label for="check"> Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label> <a asp-action="Register" asp-controller="Account"> Create Account</a></label>
+                        <label> <a asp-action="RecoverPassword" asp-controller="Account"style="margin-top: 20px;position: absolute;margin-left: 3px;"> Forget Password</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+
+@section Scripts
+    {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
