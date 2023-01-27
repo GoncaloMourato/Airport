@@ -26,8 +26,9 @@ namespace MouratoAirport.Controllers
         private readonly IConfiguration _configuration;
         private readonly IMailHelper _mailHelper;
         private readonly DataContext _context;
+        private readonly IImageHelper _imageHelper;
 
-        public AccountController(UserManager<User> userManager, IUserHelper userHelper, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IMailHelper mailHelper,DataContext context)
+        public AccountController(UserManager<User> userManager, IUserHelper userHelper, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IMailHelper mailHelper,DataContext context, IImageHelper imageHelper)
         {
             _userManager = userManager;
             _userHelper = userHelper;
@@ -35,6 +36,7 @@ namespace MouratoAirport.Controllers
             _configuration = configuration;
             _mailHelper = mailHelper;
             _context = context;
+            _imageHelper = imageHelper;
         }
         public IActionResult Login()
         {
@@ -80,6 +82,65 @@ namespace MouratoAirport.Controllers
         {
             return View();
         }
+
+
+
+
+
+        public async Task<IActionResult> EditProfile()
+        {
+            if (!this.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var user = await _userHelper.GetUserByEmailAsync(this.User.Identity.Name);
+            var model = new EditProfileViewModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                ImageUrl = user.ImageUrl
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditProfile(string id, EditProfileViewModel model)
+        {
+
+            if(id == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var imageId = string.Empty;
+
+            if (model.ImageFile != null && model.ImageFile.Length > 0)
+            {
+                imageId = await _imageHelper.UploadImageAsync(model.ImageFile, "Airplane");
+            }
+
+            var user = await _userHelper.GetUserByIdAsync(id);
+            user.FirstName= model.FirstName;
+            user.LastName= model.LastName;
+            user.ImageUrl = imageId;
+
+            try
+            {
+                await _userHelper.UpdateUserAsync(user);
+            }
+            catch
+            {
+
+            }
+
+            return RedirectToAction("Index","Home");
+
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> AdminAdd(AddEmployeeViewModel model)

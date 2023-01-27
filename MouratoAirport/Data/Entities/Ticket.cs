@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using MouratoAirport.Data.Entities;
+using System;
 
 namespace MouratoAirport.Data.Entities
 {

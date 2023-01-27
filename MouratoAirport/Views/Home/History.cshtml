@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MouratoAirport.Models.HistoryTicketViewModel
+@{
     ViewData["Title"] = "History";
     Layout = null;
 }
@@ -57,26 +58,30 @@
                         <td>From</td>
                         <td>To</td>
                         <td>Date</td>
+                        <td></td>
                     </tr>
                 </thead>
 
                 <tbody>
+                    @foreach (var item in Model.Tickets)
+                    {
                     <tr>
                         <td class="schedule">
                             <div class="schedule-de">
-                                <h5>Portugal</h5>
-                                <p>Lisbon</p>
+                               <h5>@Html.DisplayFor(modelItem => item.Flights.From)</h5>
                             </div>
                         </td>
 
                         <td class="schedule-des">
-                            <h5>Ukraine</h5>
-                            <p>Kyev</p>
+                                <h5>@Html.DisplayFor(modelItem => item.Flights.To)</h5>
                         </td>
 
-                        <td class="date"><h5>10/02/2023</h5></td>
+                            <td class="date"><h5>@Html.DisplayFor(modelItem => item.Flights.Date)</h5></td>
+
+                        <td class="edit"><a asp-route-id="@item.Id" asp-action="TicketSee" asp-controller="Home" style="color:#222;">See Ticket</a></td>
 
                     </tr>
+                    }
                 </tbody>
 
             </table>
@@ -91,26 +96,30 @@
                         <td>From</td>
                         <td>To</td>
                         <td>Date</td>
+                        <td></td>
                     </tr>
                 </thead>
 
                 <tbody>
+                    @foreach (var item in Model.TicketsExpired)
+                    {
                     <tr>
                         <td class="schedule">
                             <div class="schedule-de">
-                                <h5>Portugal</h5>
-                                <p>Lisbon</p>
+                                    <h5>@Html.DisplayFor(modelItem => item.Flights.From)</h5>
                             </div>
                         </td>
 
                         <td class="schedule-des">
-                            <h5>Ukraine</h5>
-                            <p>Kyev</p>
+                                    <h5>@Html.DisplayFor(modelItem => item.Flights.To)</h5>
                         </td>
 
-                        <td class="date"><h5>10/02/2023</h5></td>
+                        <td class="date"><h5>@Html.DisplayFor(modelItem => item.Flights.Date)</h5></td>
+
+                        <td class="edit"><a style="color: darkred;">Expired Ticket</a></td>
 
                     </tr>
+                    }
                 </tbody>
 
             </table>

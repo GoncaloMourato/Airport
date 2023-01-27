@@ -12,6 +12,8 @@
 }
 
 
+
+
 * {
     box-sizing: border-box;
 }
@@ -331,6 +333,9 @@ body {
                         font-weight: 400;
                     }
 
+
+
+
 @keyframes print {
     0% {
         transform: translateY(-510px);
@@ -455,7 +460,9 @@ body {
     cursor: default;
 }
 
-
+.redeption {
+    background: aqua;
+}
 
 
 

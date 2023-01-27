@@ -43,9 +43,11 @@ namespace MouratoAirport.Controllers
             var  model = new BuyTicketViewModel
             {
                 FlightsId = flight.Id,
-                Flights = flight
+                Flights = flight,
+                Seats =  _ticketsRepository.GetAll().Where(p => p.FlightsId == flight.Id).Select(p => p.Seat).ToArray()
 
             };
+
 
             return View(model);
         }
@@ -53,6 +55,8 @@ namespace MouratoAirport.Controllers
         [HttpPost]
         public async Task<IActionResult> BuyTicket(int id,NewTicketViewModel model)
         {
+
+
             var flight = await _flightRepository.GetByIdAsync(id);
 
             var user = await _userHelper.GetUserByEmailAsync(this.User.Identity.Name);
@@ -76,7 +80,7 @@ namespace MouratoAirport.Controllers
 
             await _ticketsRepository.CreateAsync(ticket);
 
-            return View(ticket);
+            return RedirectToAction("History");
         }
 
 

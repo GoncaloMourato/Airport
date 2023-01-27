@@ -2,8 +2,7 @@
 
 namespace MouratoAirport.Models
 {
-    public class BuyTicketViewModel : Ticket
+    public class TicketSeeViewModel : Ticket
     {
-        public string[] Seats {get;set;}
     }
 }

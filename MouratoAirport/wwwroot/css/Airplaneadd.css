@@ -19,7 +19,7 @@
 
 body {
     width: 100%;
-    background: #e5e7eb;
+    background: var(--secondary-color-dark);
     position: relative;
     display: flex;
 }

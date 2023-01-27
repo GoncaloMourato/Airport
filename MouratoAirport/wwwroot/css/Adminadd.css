@@ -85,7 +85,7 @@ body {
             #menu .items li a {
                 text-decoration: none;
                 color: var(--secondary-text-light);
-                font-weight: 300px;
+                font-weight: 300;
                 transition: 0.3s ease;
             }
 

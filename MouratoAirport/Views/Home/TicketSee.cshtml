@@ -1,0 +1,68 @@
+﻿@model MouratoAirport.Models.TicketSeeViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ticket</title>
+    <link rel="stylesheet" href="~/css/Ticketsee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+</head>
+
+<body>
+    <div class="boarding-pass">
+        <div class="card card-top">
+            <div class="source">
+                <div class="code">@Model.Flights.From</div>
+            </div>
+            <div class="flight-median">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+            <div class="destination">
+                <div class="code">@Model.Flights.To</div>
+            </div>
+        </div>
+
+        <div class="median"></div>
+
+        <div class="card card-bottom">
+            <div class="card-row">
+                <div class="card-item">
+                    <span class="label">Passenger</span>
+                    <p class="content">@Model.Name</p>
+                </div>
+
+                <div class="card-item">
+                    <span class="label">Date</span>
+                    <p class="content">@Model.Flights.Date</p>
+                </div>
+            </div>
+
+
+            <div class="card-row">
+                <div class="card-item">
+                    <span class="label">Flight Number</span>
+                    <p class="content">@Model.Flights.Number</p>
+                </div>
+
+                <div class="card-item">
+                    <span class="label">Seat</span>
+                    <p class="content">@Model.Seat</p>
+                </div>
+
+                <div class="card-item">
+                    <span class="label">Class</span>
+                    <p class="content">@Model.TypeSeat</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>

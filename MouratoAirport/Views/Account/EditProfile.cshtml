@@ -1,0 +1,114 @@
+﻿@model MouratoAirport.Models.EditProfileViewModel
+@{
+    ViewData["Title"] = "EditProfile";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="~/css/Editprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body style="background:#081a29;">
+
+    <nav>
+        <div class="container">
+            <div>
+                <a asp-action="Index" asp-controller="Home">
+                    <img src="~/images/logo2-min.png" alt="Logo" class="logo" />
+                </a>
+                <div class="menu" style="position: absolute;margin-left: 1300px;">
+                    <ul>
+                        <li>
+                            <a asp-action="Index" asp-controller="Home" style="text-decoration: none;font-weight: 900;color: #fff;">Home</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Tickets" style="text-decoration: none;font-weight: 900;color: #fff;">Buy Ticket</a>
+                        </li>
+                        <li>
+                            <a asp-action="Schedules" asp-controller="Home" style="text-decoration: none;font-weight: 900;color: #fff;">Schedules</a>
+                        </li>
+                        <li>
+                            <a asp-action="History" asp-controller="Home" style="text-decoration: none;font-weight: 900;color: #fff;">See History</a>
+                        </li>
+                        <li>
+                            <a asp-action="EditProfile" asp-controller="Account" style="text-decoration: none;font-weight: 900;color: #fff;">Profile</a>
+                        </li>
+                        <li>
+                            <a asp-action="Login" asp-controller="Account" style="text-decoration: none;font-weight: 900;color: #fff;">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+    <div class="overlayProducts">
+        <div id="formProducts" style="height: 650px;">
+
+            <div id="nameproducts">
+                <label for="message">First Name:</label>
+                <input id="message" asp-for="FirstName" placeholder="" required>
+            </div>
+
+            <div id="nameproducts">
+                <label for="message">Last Name:</label>
+                <input id="message" asp-for="LastName" placeholder="" required>
+            </div>
+
+            <label for="image">Image:</label>
+            <label class="picture" tabindex="0" style="text-align: center;">
+                <input asp-for="ImageFile" type="file" accept="image/*" id="photo" required class="picture__input">
+                <span class="picture__image" style="width: 90%;"></span>
+            </label>
+
+            <div class="center">
+                <input class="yeahyeah" type="submit" value="Edit Profile">
+            </div>
+
+        </div>
+    </div>
+    </form>
+
+
+    <script>
+        const inputFile = document.querySelector('.picture__input');
+        const pictureImage = document.querySelector('.picture__image');
+        const pictureImageText = 'Choose Image';
+        pictureImage.innerHTML = pictureImageText;
+        inputFile.addEventListener('change', function (e) {
+            const inputTarget = e.target;
+            const file = inputTarget.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.addEventListener('load', function (e) {
+                    const readerTarget = e.target;
+                    const img = document.createElement('img');
+                    img.src = readerTarget.result;
+                    img.classList.add('picture__img');
+                    pictureImage.innerHTML = '';
+                    pictureImage.appendChild(img);
+                });
+                reader.readAsDataURL(file);
+            }
+            else {
+                pictureImage.innerHTML = pictureImageText;
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+</body>
