@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity;
 namespace MouratoAirport.Controllers
 {
     //[Authorize]
+    [Authorize(Roles = "Admin")]
     public class AirplanesController : Controller
     {
         private readonly IAirplaneRepository _airplaneRepository;
@@ -161,29 +162,70 @@ namespace MouratoAirport.Controllers
         // POST: Aviaos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, AirplaneViewModel model)
-        //{
-        //    if (id != airplane.Id)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, AirplaneViewModel model2)
+        {
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            await _airplaneRepository.UpdateAsync(airplane);
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
+            if(model2.TypeEdit == "airplane")
+            {
+                if(id != 0)
+                {
+                    var imageId = string.Empty;
 
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(airplane);
-        //}
+                    if (model2.ImageFile != null && model2.ImageFile.Length > 0)
+                    {
+                        imageId = await _imageHelper.UploadImageAsync(model2.ImageFile, "Airplane");
+                    }
+
+
+                    var airplane = await _airplaneRepository.GetByIdAsync(id);
+                    airplane.Seat = model2.Seat;
+                    airplane.Model = model2.Model;
+                    airplane.Name = model2.Name;
+                    airplane.ImageUrl = imageId;
+
+                    try
+                    {
+                        await _airplaneRepository.UpdateAsync(airplane);
+                    }
+                    catch
+                    {
+
+                    }
+
+
+                }
+
+
+            }
+            else if(model2.TypeEdit == "airport")
+            {
+                if (id != 0)
+                {
+
+
+                    var airport = await _airportRepository.GetByIdAsync(id);
+                    airport.Name = model2.NameAirport;
+                    airport.City = model2.CityAirport;
+                    airport.Location = model2.LocationAirport;
+
+                    try
+                    {
+                        await _airportRepository.UpdateAsync(airport);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+
+            }
+
+            return RedirectToAction("Index");
+
+        }
 
         // GET: Aviaos/Delete/5
         public async Task<IActionResult> Delete(int? id)

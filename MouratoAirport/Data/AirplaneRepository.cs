@@ -24,7 +24,7 @@ namespace MouratoAirport.Data
 
             lista.Insert(0, new SelectListItem
             {
-                Text = "Selecione um aviao",
+                Text = "Select an airplane ...",
                 Value = "0"
             });
 

@@ -4,6 +4,8 @@ namespace MouratoAirport.Models
 {
     public class AddEmployeeViewModel
     {
+        public string Id { get; set; }
+
         [Required, StringLength(35)]
         public string FirstName { get; set; }
         [Required, StringLength(30)]

@@ -45,10 +45,6 @@ namespace MouratoAirport.Controllers
             return View();
         }
 
-        public IActionResult Edit()
-        {
-            return View();
-        }
 
         [Authorize (Roles ="Admin")]
         public IActionResult Admin()
@@ -134,6 +130,14 @@ namespace MouratoAirport.Controllers
 
         }
 
+        public async Task<IActionResult> Delete(string id)
+        {
+            var employee = await _userHelper.GetUserByIdAsync(id);
+            await _userManager.DeleteAsync(employee);
+
+            return RedirectToAction("Admin");
+        }
+
         public IActionResult ChangeUser()
         {
             return View();
@@ -165,7 +169,7 @@ namespace MouratoAirport.Controllers
 
                     if (await _userHelper.IsUserInRoleAsync(user, "Employee"))
                     {
-                        return RedirectToAction("Index", "Product");
+                        return RedirectToAction("Index", "Flights");
                     }
                     return this.RedirectToAction("Index", "Home");
                 }

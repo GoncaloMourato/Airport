@@ -17,17 +17,27 @@ namespace MouratoAirport.Controllers
     {
         private readonly IFlightRepository _flightsRepository;
         private readonly IAirplaneRepository _airplaneRepository;
+        private readonly IAirportRepository _airportRepository;
 
-        public FlightsController(IFlightRepository voosRepository, IAirplaneRepository AirplaneRepository)
+        public FlightsController(IFlightRepository flightsRepository, IAirplaneRepository AirplaneRepository, IAirportRepository airportRepository)
         {
-            _flightsRepository = voosRepository;
+            _flightsRepository = flightsRepository;
             _airplaneRepository = AirplaneRepository;
+            _airportRepository = airportRepository;
         }
 
         // GET: Voos
         public IActionResult Index()
         {
-            return View(_flightsRepository.GetAll().OrderBy(p => p.Airplane));
+            var model = new IndexFlightsViewModel
+            {
+                Flights = _flightsRepository.GetAll().Include(p => p.Airplane).OrderBy(x => x.Date).ToList()
+            };
+
+
+
+            return View(model);
+
         }
 
         // GET: Aviaos/Details/5
@@ -49,9 +59,28 @@ namespace MouratoAirport.Controllers
         // GET: Aviaos/Create
         public IActionResult Create()
         {
+            Random rand = new Random();
+
+            // Define a string de caracteres possíveis
+            string possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+            // Define o tamanho do número aleatório
+            int size = 6;
+
+            // Cria uma string vazia para armazenar o número aleatório
+            string numberflight = "";
+
+            // Adiciona caracteres aleatórios à string
+            for (int i = 0; i < size; i++)
+            {
+                numberflight += possibleChars[rand.Next(possibleChars.Length)];
+            }
+
             var model = new FlightsViewModel
             {
-                Airplanes = _airplaneRepository.GetComboAviaos()
+                Airplanes = _airplaneRepository.GetComboAviaos(),
+                Airports = _airportRepository.GetComboAirports(),
+                RandomNumber = numberflight
             };
             return View(model);
         }
@@ -66,8 +95,9 @@ namespace MouratoAirport.Controllers
             if (ModelState.IsValid)
             {
                 model.Airplanes = _airplaneRepository.GetComboAviaos();
+                model.Number = model.RandomNumber;
                 await _flightsRepository.CreateAsync(model);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(model);
         }
@@ -142,30 +172,13 @@ namespace MouratoAirport.Controllers
         }
 
         // GET: Aviaos/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new NotFoundObjectResult("FlyNotFound");
-            }
 
-            var flights = await _flightsRepository.GetByIdAsync(id.Value);
-            if (flights == null)
-            {
-                return new NotFoundObjectResult("FlyNotFound");
-            }
-
-            return View(flights);
-        }
-
-        // POST: Aviaos/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var flights = await _flightsRepository.GetByIdAsync(id);
             await _flightsRepository.DeleteAsync(flights);
-            return RedirectToAction(nameof(Index));
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult FlyNotFound()

@@ -164,6 +164,21 @@ tbody tr td {
     padding: 10px 15px;
 }
 
+.price p {
+    background: #00467f;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 10px;
+    color: rgb(255, 253, 253);
+}
+
+.buy a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #222;
+    font-weight: 600;
+}
+
 /*======SearchBar======*/
 
 
@@ -188,7 +203,7 @@ tbody tr td {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 50%;
             height: 100%;
             padding: 10px 20px;
             border-radius: 3px;

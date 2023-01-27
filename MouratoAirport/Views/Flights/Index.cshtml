@@ -1,4 +1,4 @@
-﻿@model MouratoAirport.Data.Entities.Flights
+﻿@model MouratoAirport.Models.IndexFlightsViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -24,9 +24,6 @@
         </div>
 
         <div class="items">
-            <li><i class="fa-solid fa-chart-pie"></i><a asp-action="Admin" asp-controller="Account">Dashboard</a></li>
-            <li><i class="fa-solid fa-plane"></i><a asp-action="Index" asp-controller="Airplanes">Airplanes</a></li>
-            <li><i class="fa-solid fa-ticket-simple"></i><a href="#">Ticket</a></li>
             <li><i class="fa-solid fa-plane-departure"></i><a asp-action="Index" asp-controller="Flights">Flights</a></li>
             <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="#">Logout</a></li>
         </div>
@@ -76,49 +73,51 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach(var item in Model.Flights)
+                    {
+                    
                     <tr>
                         <td class="flight-de">
-                            <p>72345</p>
+                                <p>@Html.DisplayFor(modelItem => item.Number)</p>
                         </td>
 
                         <td>
                             <div class="flight-de">
-                                <h5>16/5/2023</h5>
-                                <p>14:30</p>
+                                    <h5>@Html.DisplayFor(modelItem => item.Date)</h5>
                             </div>
                         </td>
 
                         <td class="flight-de">
-                            <p>Turkistan</p>
+                                <p>@Html.DisplayFor(modelItem => item.From)</p>
                         </td>
 
                         <td class="flight-de">
-                            <p>Ukraine</p>
+                                <p>@Html.DisplayFor(modelItem => item.To)</p>
                         </td>
 
                         <td>
                             <div class="flight-de">
-                                <h5>AE</h5>
+                                    <h5>@Html.DisplayFor(modelItem => item.Airplane.Name) </h5>
                             </div>
                         </td>
 
                         <td class="flight-de">
-                            <h5>30€</h5>
+                                <h5>@Html.DisplayFor(modelItem => item.Economic)</h5>
                         </td>
 
                         <td class="flight-de">
-                            <h5>170€</h5>
+                                <h5>@Html.DisplayFor(modelItem => item.Deluxe)</h5>
                         </td>
 
 
                         <td class="flight-de">
-                            <h5>90€</h5>
+                                <h5>@Html.DisplayFor(modelItem => item.Business)</h5>
                         </td>
 
-                        <td class="edit"><a href="#">Edit</a></td>
 
-                        <td class="edit"><a href="#">Remove</a></td>
+                        <td class="edit"><a asp-route-id="@item.Id" asp-action="Delete">Remove</a></td>
                     </tr>
+                    }
                 </tbody>
             </table>
         </dir>

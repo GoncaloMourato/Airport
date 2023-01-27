@@ -8,6 +8,8 @@ namespace MouratoAirport.Data.Entities
     {
         public int Id { get; set; }
 
+        public string Number { get; set; }
+
         public string From { get; set; }
 
         public string To { get; set; }
@@ -15,6 +17,12 @@ namespace MouratoAirport.Data.Entities
         public DateTime Date { get; set; }
 
         public Airplane Airplane { get; set; }
+
+        public double Economic { get; set; }
+
+        public double Deluxe { get; set; }
+
+        public double Business { get; set; }
 
         public int AirplaneId { get; set; }
 

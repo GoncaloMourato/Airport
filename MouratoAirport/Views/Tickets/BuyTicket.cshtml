@@ -1,4 +1,4 @@
-﻿@model MouratoAirport.Data.Entities.Ticket
+﻿@model MouratoAirport.Models.BuyTicketViewModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
     <link rel="stylesheet" href="~/css/Buyticket.css" />
 
     <title>Buy Ticket</title>
@@ -51,39 +53,1288 @@
         </div>
     </nav>
 
-    <!--Credit Card-->
 
-    <section id="oof">
+
+
+
+
+      <div class="plan">
+  <div class="seat">
+    <!--  use image here for cookpit    -->
+            @*    <img src="~/img/cook.png" alt="">*@
+
+    <div class="main">
+        <h5 style="color:#fff">Choose Seat</h5>
+
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva bl  text-center">
+            <label for="num" class="num">
+              <span>A</span>
+
+            </label>
+            <label for="num" class="num">
+              <span>B</span>
+            </label>
+            <label for="num" class="num">
+              <span>C</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center">
+          <div class="alva br">
+            <label for="num" class="num">
+              <span>D</span>
+            </label>
+            <label for="num" class="num">
+              <span>E</span>
+            </label>
+            <label for="num" class="num">
+              <span>F</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva bl">
+            <label for="num" class="num">
+              <span>1</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A1"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B1"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C1"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva br">
+            <label>
+              <input type="checkbox">
+              <span value="D1"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E1"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F1"></span>
+            </label>
+            <label for="num" class="num">
+              <span>1</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva bl">
+            <label for="num" class="num">
+              <span>2</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A2"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B2"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C2"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva br">
+            <label>
+              <input type="checkbox">
+              <span value="D2"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E2"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F2"></span>
+            </label>
+            <label for="num" class="num">
+              <span>2</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva bl">
+            <label for="num" class="num">
+              <span>3</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A3"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B3"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C3"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva br">
+            <label>
+              <input type="checkbox">
+              <span value="D3"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E3"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F3"></span>
+            </label>
+            <label for="num" class="num">
+              <span>3</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva bl">
+            <label for="num" class="num">
+              <span>4</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A4"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="b4"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="c4"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva br">
+            <label>
+              <input type="checkbox">
+               <span value="D4"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E4"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F4"></span>
+            </label>
+            <label for="num" class="num">
+              <span>4</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva bl">
+            <label for="num" class="num">
+              <span>5</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A5"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B5"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C5"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva br">
+            <label>
+              <input type="checkbox">
+              <span value="D5"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E5"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F5"></span>
+            </label>
+            <label for="num" class="num">
+              <span>5</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva1 bl1">
+            <label for="num" class="num">
+              <span>6</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A6"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B6"></spa>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C6"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva1 br">
+            <label>
+              <input type="checkbox">
+              <span value="D6"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E6"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F6"></span>
+            </label>
+            <label for="num" class="num">
+              <span>6</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva1 bl">
+            <label for="num" class="num">
+              <span>7</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A7"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B7"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C7"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva1 br">
+            <label>
+              <input type="checkbox">
+              <span value="D7"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E7"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F7"></span>
+            </label>
+            <label for="num" class="num">
+              <span>7</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva1 bl">
+            <label for="num" class="num">
+              <span>8</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A8"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B8"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C8"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva1 br">
+            <label>
+              <input type="checkbox">
+              <span value="D8"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E8"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F8"></span>
+            </label>
+            <label for="num" class="num">
+              <span>8</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva1 bl">
+            <label for="num" class="num">
+              <span>9</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A9"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B9"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C9"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva1 br">
+            <label>
+              <input type="checkbox">
+              <span value="D9"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E9"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F9"></span>
+            </label>
+            <label for="num" class="num">
+              <span>9</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva1 bl">
+            <label for="num" class="num">
+              <span>10</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A10"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B10"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C10"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva1 br">
+            <label>
+              <input type="checkbox">
+              <span value="D10"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E10"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F10"></span>
+            </label>
+            <label for="num" class="num">
+              <span>10</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva1 bl">
+            <label for="num" class="num">
+              <span>11</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A11"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B11"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C11"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva1 br">
+            <label>
+              <input type="checkbox">
+              <span value="D11"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E11"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F11"></span>
+            </label>
+            <label for="num" class="num">
+              <span>11</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva1 bl">
+            <label for="num" class="num">
+              <span>12</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A12"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B12"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C12"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva1 br">
+            <label>
+              <input type="checkbox">
+              <span value="D12"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E12"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F12"></span>
+            </label>
+            <label for="num" class="num">
+              <span>12</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>13</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A13"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B13"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C13"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D13"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E13"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F13"></span>
+            </label>
+            <label for="num" class="num">
+              <span>13</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>14</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A14"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B14"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C14"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D14"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E14"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F14"></span>
+            </label>
+            <label for="num" class="num">
+              <span>14</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>15</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A15"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B15"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C15"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D15"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E15"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F15"></span>
+            </label>
+            <label for="num" class="num">
+              <span>15</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- 15 seats -->
+
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>16</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A16"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B16"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C16"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D16"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E16"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F16"></span>
+            </label>
+            <label for="num" class="num">
+              <span>16</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>17</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A17"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B17"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C17"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D17"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E17"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F17"></span>
+            </label>
+            <label for="num" class="num">
+              <span>17</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>18</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A18"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B18"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C18"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D18"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E18"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F18"></span>
+            </label>
+            <label for="num" class="num">
+              <span>18</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>19</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A19"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B19"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C19"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D19"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E19"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F19"></span>
+            </label>
+            <label for="num" class="num">
+              <span>19</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>20</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A20"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B20"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C20"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D20"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E20"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F20"></span>
+            </label>
+            <label for="num" class="num">
+              <span>20</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>21</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A21"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B21"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C21"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D21"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E21"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F21"></span>
+            </label>
+            <label for="num" class="num">
+              <span>21</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>22</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A22"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B22"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C22"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D22"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E22"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F22"></span>
+            </label>
+            <label for="num" class="num">
+              <span>22</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>23</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A23"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B23"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C23"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D23"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E23"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F23"></span>
+            </label>
+            <label for="num" class="num">
+              <span>23</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>24</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A24"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B24"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C24"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D24"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E24"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F24"></span>
+            </label>
+            <label for="num" class="num">
+              <span>24</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>25</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A25"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B25"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C25"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D25"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E25"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F25"></span>
+            </label>
+            <label for="num" class="num">
+              <span>25</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>26</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A26"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B26"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C26"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D26"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E26"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F26"></span>
+            </label>
+            <label for="num" class="num">
+              <span>26</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>27</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A27"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B27"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C27"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D27"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E27"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F27"></span>
+            </label>
+            <label for="num" class="num">
+              <span>27</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>28</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A28"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B28"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C28"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D28"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E28"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F28"></span>
+            </label>
+            <label for="num" class="num">
+              <span>28</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row  d-flex">
+        <div class="col-md-6">
+          <div class="alva2 bl">
+            <label for="num" class="num">
+              <span>29</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="A29"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="B29"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="C29"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="alva2 br">
+            <label>
+              <input type="checkbox">
+              <span value="D29"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="E29"></span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span value="F29"></span>
+            </label>
+            <label for="num" class="num">
+              <span>29</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="exit exit--back fuselage">
+      </div>
+    </div>
+    <!-- use image here for tail -->
+            @*   <img src="~/images/cook.png" alt="">*@
+  </div>
+</div>
+
+<div class="square">
+    <label>Economic</label>
+</div>
+<div class="square1">Business</div>
+<div class="square2">Deluxe</div>
+
+
+
+
+
+
+
+
+
+
+    <!--Credit Card-->
+    <form method="post">
+    <section id="oof" style="margin-top:750px">
+
+        <div id="FullName">
+            <label class="label" for="message" style="width: 15%;">Full Name :</label>
+            <input asp-for="Name" id="message" type="text" placeholder="Full Name" class="firstname" required>
+        </div>
+
         <div id="NameOnCard">
-            <label class="label" for="message" style="width: 40%;">Name On Card :</label>
-            <input id="message" placeholder="Name on Card" required>
+            <label class="label" for="message" style="width: 17%;">Name on Card :</label>
+            <input asp-for="NameOnCard" id="message" type="text" placeholder="Name on Card" required>
         </div>
 
         <div id="CardNumberProfile">
-            <label class="label" for="message" style="width: 40%;">Card Number :</label>
-            <input id="card" placeholder="Card Number" data-mask="9999 9999 9999 9999" required>
+            <label class="label" for="message" style="width: 23%;">Card Number :</label>
+            <input asp-for="CardNumber" id="card" placeholder="Card Number" data-mask="0000-0000-0000-0000" type="text" class="card-number-input"  required>
         </div>
 
 
-
         <div class="flex">
-            <div id="ExpireDateProfile">
-                <label class="label" for="message" style="width: 60%;">Expire Date:</label>
-                <input id="message" placeholder="02/23" required>
+            <div id="ExpireDate" style="width: 33%;">
+                <label class="label" for="message" style="width: 25%;">Card Date :</label>
+                <input asp-for="ExpiredDate" id="message" type="text" data-mask="00/00" placeholder="00/00" required>
             </div>
 
-            <div id="CvvProfile">
-                <label class="label" for="message" style="width: 40%;">CVV:</label>
-                <input id="message" placeholder="123" data-mask="999" required>
+            <div id="CVV" style="width: 33%;">
+                <label class="label" for="message" style="width: 15%;">CVV :</label>
+                <input asp-for="Cvv" id="card" type="text" data-mask="000" placeholder="123" required>
             </div>
 
-            <div class="center" style="padding-top: 80px;position: absolute;margin-left: 240px;">
-                <input type="submit" value="Save Settings" class="submit-btn">
+            <div id="Total" style="width: 33%;">
+                <label class="label" for="message" style="width: 15%;">Total :</label>
+                <input asp-for="Price" id="card" type="text" class="total"  readonly>
             </div>
+
+                
+               
+
+            <div class="center" style="padding-top: 80px;position: absolute;margin-left: 240px;width: 30%;">
+                <input asp-route-id="@Model.Flights.Id" type="submit" value="Pay Ticket" class="submit-btn">
+            </div>
+        </div>
+        
+                <input asp-for="Seat" id="card" type="text" class="seatnumber" style="visibility:hidden;" readonly>
+
+                <input asp-for="TypeSeat" id="card" type="text" class="typeseat" style="visibility:hidden;" readonly>
     </section>
+    </form>
     <!--Ticket-->
 
-    <main class="ticket-system" style="position: absolute;">
+    <main class="ticket-system" style="position: absolute;margin-top:750px">
         <div class="top">
             <h1 class="title">Wait a second, your ticket is being printed</h1>
             <div class="printer">
@@ -96,37 +1347,38 @@
                         <path d="M86.514 38.058V17.96H69.291v20.098H49.193v17.223h20.079v20.106h17.23V55.281h20.11V38.058H86.514z" fill="#fff" />
                         </svg>
                         <div class="route">
-                            <h2>NYC</h2>
+                            <h2>@Model.Flights.From</h2>
                             <svg class="plane-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510">
                                 <path fill="#00ac9d" d="M497.25 357v-51l-204-127.5V38.25C293.25 17.85 275.4 0 255 0s-38.25 17.85-38.25 38.25V178.5L12.75 306v51l204-63.75V433.5l-51 38.25V510L255 484.5l89.25 25.5v-38.25l-51-38.25V293.25l204 63.75z" />
                             </svg>
-                            <h2>ATL</h2>
+                            <h2>@Model.Flights.To</h2>
                         </div>
                         <div class="details">
                             <div class="item">
                                 <span>Passanger</span>
-                                <h3>Catia Santos</h3>
+                                <h3 class="insertname"></h3>
                             </div>
                             <div class="item">
                                 <span>Flight No.</span>
-                                <h3>EU6743</h3>
+                                <h3>@Model.Flights.Number</h3>
                             </div>
                             <div class="item">
                                 <span>Departure</span>
-                                <h3>08/26/2018 15:33</h3>
-                            </div>
-                            <div class="item">
-                                <span>Gate Closes</span>
-                                <h3>15:03</h3>
-                            </div>
-                            <div class="item">
-                                <span>Luggage</span>
-                                <h3>Hand Luggage</h3>
-                            </div>
+                                <h3>@Model.Flights.Date</h3>
+                            </div> 
                             <div class="item">
                                 <span>Seat</span>
-                                <h3>11A</h3>
+                                <h3 class="minhaLabel"></h3>
                             </div>
+                            <div class="item">
+                                <span>Classe</span>
+                                <h3 class="classe"></h3>
+                            </div>
+                            <div class="item">
+                                <span>Price</span>
+                                <h3 class="price"></h3>
+                            </div>
+
                         </div>
                     </div>
                     <div class="receipt qr-code">
@@ -143,5 +1395,53 @@
         </div>
     </main>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
+
+    <script>
+        document.querySelector('.firstname').oninput = () =>{
+            document.querySelector('.insertname').innerText = document.querySelector('.firstname').value;
+        }
+    </script>
+
+    <script>
+        $("span").click(function() {
+            if ($(this).css("background-color") == "rgb(151, 94, 204)") {
+            var valor = "Deluxe";
+            var preco = @Model.Flights.Deluxe;
+            document.querySelector('.classe').innerText = valor;
+            document.querySelector('.price').innerText = preco;
+            document.querySelector('.typeseat').value = valor;
+            document.querySelector('.total').value = preco;
+            
+            }
+            if ($(this).css("background-color") == "rgb(204, 197, 94)") {
+            var valor = "Business";
+            var preco = @Model.Flights.Business;
+            document.querySelector('.classe').innerText = valor;
+            document.querySelector('.price').innerText = preco;
+            document.querySelector('.typeseat').value = valor;
+            document.querySelector('.total').value = preco;
+            }
+            if ($(this).css("background-color") == "rgb(94, 109, 204)") {
+                var valor = "Economic";
+                var preco = @Model.Flights.Economic;
+                document.querySelector('.classe').innerText = valor;
+                document.querySelector('.price').innerText = preco;
+                document.querySelector('.typeseat').value = valor;
+                document.querySelector('.total').value = preco;
+            }
+            var valorSpan = this.getAttribute("value");
+            document.querySelector('.minhaLabel').innerText = valorSpan;
+            document.querySelector('.seatnumber').value = valorSpan;
+        });
+    </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js%22%3E"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js%22%3E"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
 </body>

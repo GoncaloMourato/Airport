@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using MouratoAirport.Data.Entities;
 using MouratoAirport.Data;
+using MouratoAirport.Models;
+using MouratoAirport.Helpers;
 
 namespace MouratoAirport.Controllers
 {
@@ -15,27 +17,81 @@ namespace MouratoAirport.Controllers
     public class TicketsController : Controller
     {
         private readonly ITicketRepository _ticketsRepository;
+        private readonly IFlightRepository _flightRepository;
+        private readonly IUserHelper _userHelper;
 
-        public TicketsController(ITicketRepository ticketsRepository)
+        public TicketsController(ITicketRepository ticketsRepository, IFlightRepository flightRepository, IUserHelper userHelper)
         {
             _ticketsRepository = ticketsRepository;
+            _flightRepository = flightRepository;
+            _userHelper = userHelper;
         }
 
         // GET: Bilhetes
 
-        public IActionResult Seats()
+        public async Task<IActionResult> BuyTicket(int id)
         {
-            return View();
+            if (!this.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            
+
+            var flight = await _flightRepository.GetByIdAsync(id);
+
+            var  model = new BuyTicketViewModel
+            {
+                FlightsId = flight.Id,
+                Flights = flight
+
+            };
+
+            return View(model);
         }
 
-        public IActionResult BuyTicket()
+        [HttpPost]
+        public async Task<IActionResult> BuyTicket(int id,NewTicketViewModel model)
         {
-            return View();
+            var flight = await _flightRepository.GetByIdAsync(id);
+
+            var user = await _userHelper.GetUserByEmailAsync(this.User.Identity.Name);
+
+            var ticket = new NewTicketViewModel
+            {
+                FlightsId = flight.Id,
+                NameOnCard = model.NameOnCard,
+                CardNumber = model.CardNumber,
+                Cvv = model.Cvv,
+                ExpiredDate = model.ExpiredDate,
+                Name = model.Name,
+                Price = model.Price,
+                Seat = model.Seat,
+                TypeSeat = model.TypeSeat,
+                Number = flight.Number,
+                Date = System.DateTime.Today.ToString(),
+                UserId = user.Id
+
+            };
+
+            await _ticketsRepository.CreateAsync(ticket);
+
+            return View(ticket);
         }
+
+
+
 
         public IActionResult Index()
         {
-            return View(_ticketsRepository.GetAll().OrderBy(p => p.Id));
+            var model = new FlightsTicketViewModel
+            {
+                Flights = _flightRepository.GetAll().Include(p => p.Airplane).OrderBy(x => x.Date).ToList()
+            };
+
+
+
+            return View(model);
         }
 
         // GET: Bilhetes/Details/5

@@ -1,4 +1,4 @@
-﻿@model MouratoAirport.Data.Entities.Flights
+﻿@model MouratoAirport.Models.FlightsViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = null;
@@ -34,43 +34,37 @@
     <h2 style="position: absolute;padding-left: 400px;padding-top: 15px;">Add Flights</h2>
     <h2 style="position: absolute;padding-left: 1250px;padding-top: 15px;">Add Prices</h2>
 
-
+    <form method="post">
     <div id="formFlights" style="height: 750px;">
 
         <div id="nameflights">
             <label for="message">Number Flight:</label>
-            <input id="message" placeholder="" readonly>
+            <input asp-for="RandomNumber" id="message" placeholder="" readonly>
         </div>
 
         <div id="nameflights">
             <label for="message">Date/Time:</label>
-            <input type="date" id="message" placeholder="" required>
+            <input asp-for="Date" type="datetime-local" id="message" placeholder="" required>
         </div>
 
         <div class="select">
             <label for="reason">From</label>
-            <select required id="format">
-                <option selected disabled>Choose Start</option>
-                <option value="start1">China</option>
-                <option value="start2">Portugal</option>
+            <select asp-for="From" asp-items="Model.Airports"  required id="format">
+
             </select>
         </div>
 
         <div class="select">
             <label for="reason">To</label>
-            <select required id="format">
-                <option selected disabled>Choose Destination</option>
-                <option value="to1">Japan</option>
-                <option value="to2">Ukraine</option>
+            <select asp-for="To" asp-items="Model.Airports" required id="format">
+
             </select>
         </div>
 
         <div class="select">
             <label for="reason">Airplane</label>
-            <select required id="format">
-                <option selected disabled>Choose Airplane</option>
-                <option value="Air1">AE-89</option>
-                <option value="Air2">BV-C3-74</option>
+            <select asp-for="AirplaneId" asp-items="Model.Airplanes" required id="format">
+                
             </select>
         </div>
 
@@ -80,24 +74,26 @@
 
     </div>
 
-    <div id="formFlights" style="height: 350px;position: absolute;margin-left: 1250px;">
+    <div id="formFlights" style="height: 350px;position: absolute;margin-left: 1250px;margin-top:-750px">
 
         <div id="nameflights">
             <label for="message">Price Deluxe:</label>
-            <input id="message" placeholder="" required>
+            <input asp-for="Deluxe" id="message" placeholder="" required>
         </div>
 
         <div id="nameflights">
-            <label for="message">Price Economy:</label>
-            <input id="message" placeholder="" required>
+            <label for="message">Price Economic:</label>
+            <input asp-for="Economic" id="message" placeholder="" required>
         </div>
 
         <div id="nameflights">
             <label for="message">Price Business:</label>
-            <input id="message" placeholder="" required>
+            <input asp-for="Business" id="message" placeholder="" required>
         </div>
 
     </div>
+
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>

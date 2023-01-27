@@ -106,8 +106,14 @@ nav {
 /*======Board======*/
 
 body {
-    background: linear-gradient( 90deg, #f1f1f1 0%, rgba(255,255,255,0) 100% );
+    /* background-image: url("../images/bg.png");*/
+    background: #081a29;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
+
 
 .board {
     width: 96.5%;
@@ -178,3 +184,70 @@ tbody tr td {
     color: #222;
     font-weight: 600;
 }
+
+
+/*======SearchBar======*/
+
+
+
+.containersearch .input {
+    border: 0;
+    outline: none;
+    color: #8b7d77;
+}
+
+.search_wrap {
+    width: 500px;
+    margin: 38px auto;
+}
+
+    .search_wrap .search_box {
+        position: relative;
+        width: 500px;
+        height: 60px;
+    }
+
+        .search_wrap .search_box .input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px 20px;
+            border-radius: 3px;
+            font-size: 18px;
+        }
+
+        .search_wrap .search_box .btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 100%;
+            background: var(--primary-color);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+            .search_wrap .search_box .btn:hover {
+                background: var(--secondary-color);
+            }
+
+            .search_wrap .search_box .btn.btn_common .fas {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                color: #fff;
+                font-size: 20px;
+            }
+
+    .search_wrap.search_wrap_3 .search_box .input {
+        border-radius: 50px;
+    }
+
+    .search_wrap.search_wrap_3 .search_box .btn {
+        right: 0px;
+        border-radius: 50%;
+    }
+

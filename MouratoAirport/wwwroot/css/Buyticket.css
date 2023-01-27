@@ -160,6 +160,7 @@ input {
     color: #fff;
     margin-top: 5px;
     cursor: pointer;
+    width: 150%;
 }
 
     .submit-btn:hover {
@@ -347,3 +348,189 @@ body {
         transform: translateY(0);
     }
 }
+
+
+
+
+/*Seats*/
+
+.seat {
+    margin: auto;
+    max-width: 260px;
+    width: 20%;
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 45%;
+    top: -10%;
+}
+
+.main {
+    background: var(--secondary-color-dark);
+}
+
+.seat img {
+    width: 100%;
+}
+
+.alva label {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0rem;
+}
+
+.num span {
+    background: none !important;
+    color: #fff !important;
+    transform: rotate(90deg);
+}
+
+.alva label input[type="checkbox"] {
+    display: none;
+}
+
+.alva label span {
+    position: relative;
+    display: inline-block;
+    color: var(--secondary-color-dark);
+    background: #975ecc;
+    user-select: none;
+    transition: 0.5s;
+    overflow: hidden;
+    min-width: 25px !important;
+    min-height: 25px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+    .alva label span::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.alva label input[type="checkbox"]:checked ~ span {
+    background: red;
+    /* You can add image in background for selected seat  */
+    width: 100%;
+    height: auto;
+    cursor: default;
+}
+
+
+.alva1 label input[type="checkbox"] {
+    display: none;
+}
+
+.alva1 label span {
+    position: relative;
+    display: inline-block;
+    color: var(--secondary-color-dark);
+    background: #ccc55e;
+    user-select: none;
+    transition: 0.5s;
+    overflow: hidden;
+    min-width: 25px !important;
+    min-height: 25px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+    .alva1 label span::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.alva1 label input[type="checkbox"]:checked ~ span {
+    background: red;
+    /* You can add image in background for selected seat  */
+    width: 100%;
+    height: auto;
+    cursor: default;
+}
+
+
+
+
+
+.alva2 label input[type="checkbox"] {
+    display: none;
+}
+
+.alva2 label span {
+    position: relative;
+    display: inline-block;
+    color: var(--secondary-color-dark);
+    background: #5e6dcc;
+    user-select: none;
+    transition: 0.5s;
+    overflow: hidden;
+    min-width: 25px !important;
+    min-height: 25px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+    .alva2 label span::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.alva2 label input[type="checkbox"]:checked ~ span {
+    background: red;
+    /* You can add image in background for selected seat  */
+    width: 100%;
+    height: auto;
+    cursor: default;
+}
+
+/*======SQUARES======*/
+
+.square {
+    position: absolute;
+    height: 75px;
+    width: 75px;
+    background-color: #5e6dcc;
+    margin-left: 1500px;
+    margin-top: 300px;
+}
+
+.square1 {
+    position: absolute;
+    height: 75px;
+    width: 75px;
+    background-color: #cfaa55;
+    margin-left: 1500px;
+    margin-top: 400px;
+}
+
+.square2 {
+    position: absolute;
+    height: 75px;
+    width: 75px;
+    background-color: #8455cf;
+    margin-left: 1500px;
+    margin-top: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

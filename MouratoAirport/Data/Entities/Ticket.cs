@@ -5,6 +5,10 @@ namespace MouratoAirport.Data.Entities
 {
     public class Ticket : IEntity
     {
+        public User User { get; set; } 
+
+        public string UserId { get; set; }
+
         public int Id { get; set; }
 
         public string Number { get; set; }
@@ -21,12 +25,14 @@ namespace MouratoAirport.Data.Entities
 
         public string Name { get; set; }
 
-        public int CardNumber { get; set; }
+        public string NameOnCard { get; set; }
+
+        public string CardNumber { get; set; }
 
         public string Date { get; set; }
 
-        public int Cvv { get; set; }
+        public string ExpiredDate { get; set; }
 
-        public int Quantity { get; set; }
+        public int Cvv { get; set; }
     }
 }
